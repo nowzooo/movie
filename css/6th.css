@@ -1,0 +1,135 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&family=Passion+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Permanent+Marker&family=Sixtyfour+Convergence&family=Staatliches&display=swap');
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+  overflow: hidden;
+  font-family: 'Noto Sans KR', sans-serif; 
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* 초기에는 숨겨짐 */
+  animation: revealVideoContainer 3s ease-in-out forwards; /* 비디오 컨테이너 애니메이션 */
+}
+
+.video-mask {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: black;
+  border-radius: 60%;
+  transform: translate(-50%, -50%);
+  animation: reveal 3s ease-in-out forwards;
+  overflow: hidden;
+}
+
+.video-mask video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes reveal {
+  0% {
+      width: 0;
+      height: 0;
+      background-color: black;
+  }
+  50% {
+      background-color: black;
+      width: 20rem;
+      height: 20rem;
+  }
+  100% {
+      background-color: transparent;
+      width: 50%;
+      height: 40%;
+  }
+}
+
+@keyframes revealVideoContainer {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+/* Eye 크기 조정 */
+.eye, .pupil {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0; 
+  animation: revealEyePupil 3s ease-in-out forwards; 
+}
+
+/* Eye */
+.eye {
+  width: 12rem; /* 눈 크기 */
+  height: 12rem; /* 눈 크기 */
+  background-color: white;
+  border-radius: 50%;
+  z-index: 10; /* 눈은 pupil보다 뒤에 위치 */
+}
+
+/* Pupil */
+.pupil {
+  width: 4rem; /* 눈동자 크기 */
+  height: 4rem; /* 눈동자 크기 */
+  background-color: black;
+  z-index: 20; /* 눈동자가 눈 위에 위치 */
+  pointer-events: none; /* 마우스 이벤트가 비디오와 겹쳐도 눈동자가 반응하지 않도록 */
+  border-radius: 50%;
+  left: 30%;
+}
+
+@keyframes revealEyePupil {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+
+#back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  outline: 1px solid #f6f6f6;
+  background-color: #242424;
+  color: #f6f6f6;
+  outline-offset: -0.5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 100;
+  transition: all .5s ease-in-out;
+  }
+          
+  #back-button:hover {
+  background-color: #f6f6f6;
+  color: #242424;
+  }

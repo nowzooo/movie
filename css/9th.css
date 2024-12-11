@@ -1,0 +1,74 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&family=Passion+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Permanent+Marker&family=Sixtyfour+Convergence&family=Staatliches&display=swap');
+
+ /* body 스타일 초기화 */
+ body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative; /* 이미지가 절대 위치를 가지므로 body가 기준 */
+    overflow: hidden;
+    background-color: #f6f6f6;
+  }
+
+  /* 버튼 스타일 */
+  .button-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* 버튼을 화면 중앙 하단에 위치시킴 */
+    padding: 10px 20px;
+    font-size: 16px;
+    outline: 1px solid #242424;
+    outline-offset: -0.5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    z-index: 10; /* 버튼이 이미지 위에 위치하도록 z-index 설정 */
+    transition: all .5s ease-in-out;
+  }
+
+  .button-container:hover {
+  background-color: #242424;
+}
+  .button-container:hover input {
+    color: #f6f6f6;
+}
+
+  input{
+    background: none;
+    border: none;
+  }
+
+
+  /* 생성된 이미지 스타일 */
+  .random-image {
+    position: absolute;
+    border-radius: 8px;
+    z-index: 1; /* 이미지가 버튼 아래에 위치하도록 z-index 설정 */
+  }
+
+  #back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    outline: 1px solid #242424;
+    outline-offset: -0.5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 100;
+    transition: all .5s ease-in-out;
+}
+                
+#back-button:hover {
+    background-color: #242424;
+    color: #f6f6f6;
+}

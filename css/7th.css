@@ -1,0 +1,84 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&family=Passion+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Permanent+Marker&family=Sixtyfour+Convergence&family=Staatliches&display=swap');
+
+/* Flexbox로 페이지 전체 중앙 정렬 */
+body {
+    font-family: 'Noto Sans KR', sans-serif; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f6f6f6;
+  }
+
+  /* 이미지 컨테이너 */
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* 초기 상태에서 숨겨짐 */
+    animation: fadeInUp 1s forwards; /* 1초 뒤에 떠오르는 애니메이션 */
+  }
+
+  /* 애니메이션 정의: 위로 떠오르는 효과 */
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(50px); /* 시작 위치 */
+      opacity: 0; /* 투명도 */
+    }
+    to {
+      transform: translateY(0); /* 끝 위치 */
+      opacity: 1; /* 완전히 보이게 */
+    }
+  }
+
+  /* 스타 평점 컨테이너 */
+  .star-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .star {
+    appearance: none;
+    padding: 1px;
+  }
+
+  .star::after {
+    content: '☆';
+    color: hsl(60, 80%, 45%);
+    font-size: 30px;
+  }
+
+  .star:hover::after,
+  .star:has(~ .star:hover)::after,
+  .star:checked::after,
+  .star:has(~ .star:checked)::after {
+    content: '★';
+  }
+
+  .star:hover ~ .star::after {
+    content: '☆';
+  }
+
+  #back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    outline: 1px solid #242424;
+    outline-offset: -0.5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 100;
+    transition: all .5s ease-in-out;
+}
+                
+#back-button:hover {
+    background-color: #242424;
+    color: #f6f6f6;
+}

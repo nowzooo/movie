@@ -1,0 +1,58 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&family=Passion+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Permanent+Marker&family=Sixtyfour+Convergence&family=Staatliches&display=swap');
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    background-color: #f6f6f6;
+    font-family: 'Noto Sans KR', sans-serif; 
+}
+
+/* 포스터 이미지 */
+.poster-image {
+  margin-top: 12rem;
+    width: 20rem;
+    height: 30rem;
+    background-image: url(../img/htm_20160219171529965781.jpg); /* 포스터 이미지 */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    cursor: pointer; /* 클릭할 수 있도록 커서 설정 */
+}
+
+/* 텍스트 메시지 */
+.message {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    display: none; /* 기본적으로 숨김 */
+    text-align: center;
+}
+
+#back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    outline: 1px solid #242424;
+    outline-offset: -0.5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 100;
+    transition: all .5s ease-in-out;
+}
+                
+#back-button:hover {
+    background-color: #242424;
+    color: #f6f6f6;
+}

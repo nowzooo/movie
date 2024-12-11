@@ -1,0 +1,132 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&family=Passion+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Permanent+Marker&family=Sixtyfour+Convergence&family=Staatliches&display=swap');
+body{font-family: 'Noto Sans KR', sans-serif; background-color: #F6F6F6; overflow-x: hidden;}
+
+
+header nav .gnb ul li{
+    height: 100%;
+    display: grid;
+    place-content: center;
+    text-decoration: none;
+    padding: 1em;
+    text-align: center;
+    color: #242424;
+    
+    outline: 1px solid #242424;
+    outline-offset: -0.5px;
+    font-weight: 500;
+}
+header nav .gnb ul li:last-child{
+    outline: 1px solid #242424;
+    outline-offset: -0.5px;
+    color: #242424;
+    background-color: #F6F6F6;
+    padding: 5rem;
+    font-size: 10rem;
+    font-family: 'Press Start 2P', cursive;
+    font-weight: 400;
+    font-style: normal;
+    animation: HUE_SHIFT 5s infinite;
+    
+}
+
+
+
+  @keyframes shad-anim {
+    0% {background-position: 0 0}
+    0% {background-position: 100% -100%}
+    }
+
+img{
+    width: 15rem;
+    padding-bottom: 2rem;
+
+}
+
+.grid_container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.grid_container a{
+    display: block;
+    height: 30rem;
+    outline: 1px solid #242424;
+    outline-offset: -0.5px;
+    transition: transform 0.2s ease-in-out;
+    place-items: center;
+    padding-top: 3rem;
+    line-height: 1.5rem
+}
+.grid_container a:hover{
+    transform: rotate(5deg);
+}
+
+.marquee {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+.marquee p{
+    font-size: 5rem;
+  }
+
+  h1, h3{ 
+    font-size: 5vw;
+    text-align: center;
+    border: 1px solid;
+    font-family: 'Press Start 2P', cursive;
+    overflow: hidden;
+    color: #242424;
+    padding: 20px;
+  }
+  
+  
+footer{
+    width: 100%;
+    height: 5rem;
+    text-align: center;
+    outline: 1px solid #242424;
+    background-color: #242424;
+    color: #F6F6F6;
+    line-height: 5rem;
+
+}
+
+
+
+@media screen and (min-width: 30rem) {
+    .grid_container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+@media screen and (min-width: 35rem) {
+    .grid_container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media screen and (min-width: 50rem) {
+    .grid_container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media screen and (min-width: 94rem) {
+    .grid_container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @keyframes HUE_SHIFT {
+    0% {
+      filter: hue-rotate(0);
+    }
+    
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
